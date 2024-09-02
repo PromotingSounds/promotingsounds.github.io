@@ -17,11 +17,9 @@
         const error = getQueryParam('error');
 
         if (code) {
-            // Use the universal link here
-            window.location.href = `https://promotingsounds.github.io/tiktok-auth?code=${code}`;
+            window.location.href = `aimanagertiktok://tiktok-auth?code=${code}`;
         } else if (error) {
-            // Handle error case
-            window.location.href = `https://promotingsounds.github.io/tiktok-auth?error=${error}`;
+            window.location.href = `aimanagertiktok://tiktok-auth?error=${error}`;
         } else {
             document.body.innerHTML += '<p>No code or error received.</p>';
         }
