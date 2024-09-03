@@ -12,15 +12,21 @@
         const error = urlParams.get('error');
         
         if (code) {
-            // Redirect to the Universal Link with the authorization code
-            window.location.href = `https://aimusicmanagerlink.netlify.app/tiktok-auth?code=${code}`;
+            // Attempt to open the app using the Universal Link
+            window.location.href = `aimanager://tiktok-auth?code=${code}`;
+
+            // Set a timeout to redirect to a fallback web page if the app is not installed
+            setTimeout(() => {
+                window.location.href = `https://aimusicmanagerlink.netlify.app/fallback-page`;
+            }, 1500); // Adjust the timeout as necessary
         } else if (error) {
-            // Handle error case if needed
-            window.location.href = `https://aimusicmanagerlink.netlify.app/tiktok-auth?error=${error}`;
+            // Handle error case within the browser
+            document.body.innerHTML = `Error: ${error}`;
         } else {
             document.body.innerHTML = 'No code or error received.';
         }
     </script>
 </body>
 </html>
+
 
