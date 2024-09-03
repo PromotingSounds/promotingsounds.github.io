@@ -1,11 +1,14 @@
 {
-  "applinks": {
-    "apps": [],
-    "details": [
-      {
-        "appID": "68TSW4TZH4.com.UpNext.Aimanager"
-        "paths": ["/tiktok-auth/", "*"]
-      }
-    ]
-  }
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "68TSW4TZH4.com.UpNext.Aimanager",
+                "paths": [
+                    "/tiktok-auth/",
+                    "*"
+                ]
+            }
+        ]
+    }
 }
