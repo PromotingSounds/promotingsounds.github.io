@@ -10,9 +10,9 @@
         const error = urlParams.get('error');
         
         if (code) {
-            window.location.href = `aimanagertiktok://tiktok-auth?code=${code}`;
+            window.location.href = `https://promotingsounds.github.io/tiktok-auth?code=${code}`;
         } else if (error) {
-            window.location.href = `aimanagertiktok://tiktok-auth?error=${error}`;
+            window.location.href = `https://promotingsounds.github.io/tiktok-auth?code=${error}`;
         } else {
             document.write('No code or error received');
         }
