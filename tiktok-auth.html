@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TikTok Auth Redirect</title>
 </head>
 <body>
@@ -10,11 +12,13 @@
         const error = urlParams.get('error');
         
         if (code) {
-            window.location.href = `aiamanagertiktok://tiktok-auth?code=${code}`;
+            // Redirect to the Universal Link with the authorization code
+            window.location.href = `https://aimusicmanagerlink.netlify.app/tiktok-auth?code=${code}`;
         } else if (error) {
-            window.location.href = `aimanagertiktok://tiktok-auth?error=${error}`;
+            // Handle error case if needed
+            window.location.href = `https://aimusicmanagerlink.netlify.app/tiktok-auth?error=${error}`;
         } else {
-            document.write('No code or error received');
+            document.body.innerHTML = 'No code or error received.';
         }
     </script>
 </body>
