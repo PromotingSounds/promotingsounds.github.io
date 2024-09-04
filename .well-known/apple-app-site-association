@@ -1,20 +1,11 @@
 {
-    "applinks": {
-        "apps": [],
-        "details": [
-            {
-                "appID": "68TSW4TZH4.com.UpNext.Aimanager",
-                "paths": ["/tiktok-auth*"],
-                "components": [
-                    {
-                        "/": "/tiktok-auth",
-                        "comment": "Matches any URL with a path that starts with /tiktok-auth"
-                    }
-                ]
-            }
-        ]
-    },
-    "webcredentials": {
-        "apps": ["68TSW4TZH4.com.UpNext.Aimanager"]
-    }
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "68TSW4TZH4.com.UpNext.Aimanager",
+        "paths": ["/tiktok-auth*"]
+      }
+    ]
+  }
 }
