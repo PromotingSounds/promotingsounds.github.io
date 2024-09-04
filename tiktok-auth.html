@@ -14,19 +14,16 @@
         const state = urlParams.get('state');
         
         if (code) {
-            // Construct the Universal Link with the code and state
-            const universalLink = `https://aimusicmanagerlink.netlify.app/tiktok-auth?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
+            document.getElementById('message').innerText = 'Authentication successful. Redirecting to app...';
+            // Use the custom URL scheme to open the app
+            window.location.href = `aimanagertiktok://tiktok-auth?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
             
-            // Attempt to open the app using the Universal Link
-            window.location.href = universalLink;
-            
-            // Set a timeout to redirect to a fallback web page if the app is not installed
+            // Fallback for when the app isn't installed
             setTimeout(() => {
-                document.getElementById('message').innerText = 'Redirecting to fallback page...';
+                document.getElementById('message').innerText = 'App not installed. Redirecting to fallback page...';
                 window.location.href = 'https://aimusicmanagerlink.netlify.app/fallback-page';
-            }, 2000); // 2 seconds timeout
+            }, 2000);
         } else if (error) {
-            // Handle error case
             document.getElementById('message').innerText = `Authentication Error: ${error}`;
         } else {
             document.getElementById('message').innerText = 'No code or error received.';
